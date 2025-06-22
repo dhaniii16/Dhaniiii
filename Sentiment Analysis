@@ -1,0 +1,12 @@
+# Sentiment Analysis Platform
+
+**2023 Project**
+
+A simple sentiment analysis tool using Python and TextBlob to classify text as Positive, Negative, or Neutral.
+
+---
+
+## Installation
+
+```bash
+pip install -r requirements.txt
