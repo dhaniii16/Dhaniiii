@@ -1,0 +1,29 @@
+
+---
+
+#### 2. Example frontend snippet (React - `src/App.js`):
+
+```jsx
+import React, { useEffect, useState } from 'react';
+
+function App() {
+  const [tasksCompleted, setTasksCompleted] = useState(0);
+
+  useEffect(() => {
+    // Example: fetch data from Azure Function API endpoint
+    fetch('/api/getProductivityData')
+      .then(res => res.json())
+      .then(data => setTasksCompleted(data.tasksCompleted))
+      .catch(console.error);
+  }, []);
+
+  return (
+    <div style={{ padding: 20 }}>
+      <h1>Azure-Powered Productivity Dashboard</h1>
+      <p>Tasks Completed Today: {tasksCompleted}</p>
+      {/* Add more charts and widgets here */}
+    </div>
+  );
+}
+
+export default App;
