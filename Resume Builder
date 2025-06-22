@@ -1,0 +1,31 @@
+# Resume & Portfolio Builder Tool
+
+**2024 Project**
+
+A web application that allows users to build professional resumes and portfolios using customizable templates and export options.
+
+---
+
+## Features
+- User-friendly form input for personal details, education, work experience, skills, and projects
+- Multiple resume and portfolio templates
+- Export resumes as PDF and DOCX
+- Responsive design for desktop and mobile
+
+---
+
+## Technologies Used
+- HTML, CSS, JavaScript (Vanilla or React)
+- PDF generation libraries (e.g., jsPDF)
+- Optional backend with Node.js/Express (for saving profiles)
+
+---
+
+## Installation
+
+Clone the repo and open `index.html` in a browser (for frontend-only version):
+
+```bash
+git clone https://github.com/yourusername/resume-portfolio-builder.git
+cd resume-portfolio-builder
+open index.html
