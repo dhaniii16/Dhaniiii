@@ -1,12 +1,24 @@
-# Sentiment Analysis Platform
+# sentiment_analysis.py
+from textblob import TextBlob
+import argparse
 
-**2023 Project**
+def analyze_sentiment(text):
+    analysis = TextBlob(text)
+    polarity = analysis.sentiment.polarity
+    if polarity > 0:
+        return "Positive"
+    elif polarity == 0:
+        return "Neutral"
+    else:
+        return "Negative"
 
-A simple sentiment analysis tool using Python and TextBlob to classify text as Positive, Negative, or Neutral.
+def main(input_text):
+    sentiment = analyze_sentiment(input_text)
+    print(f"Sentiment: {sentiment}")
 
----
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Simple Sentiment Analysis Platform")
+    parser.add_argument('--text', type=str, required=True, help="Text to analyze sentiment")
+    args = parser.parse_args()
 
-## Installation
-
-```bash
-pip install -r requirements.txt
+    main(args.text)
