@@ -1,0 +1,27 @@
+# expense_classifier.py
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+# Sample training data
+expenses = [
+    ("Coffee at Starbucks", "Food"),
+    ("Uber ride to office", "Transport"),
+    ("Grocery shopping", "Groceries"),
+    ("Monthly Netflix subscription", "Entertainment"),
+    ("Electricity bill", "Utilities")
+]
+
+texts, labels = zip(*expenses)
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(texts)
+
+clf = MultinomialNB()
+clf.fit(X, labels)
+
+def classify_expense(description):
+    x_test = vectorizer.transform([description])
+    return clf.predict(x_test)[0]
+
+# Example usage
+print(classify_expense("Dinner at pizza place"))  # Output: Food
